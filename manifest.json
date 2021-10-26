@@ -1,0 +1,34 @@
+{
+    "name":"TELPort",
+    "short_name":"TELPort",
+    "icons": [
+        {
+            "src": "telport-logo-6-192x192.png",
+            "sizes":"192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "telport-logo-6-512x512.png",
+            "sizes":"512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "telport-logo-6-192x192-maskable.png",
+            "sizes":"192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "telport-logo-6-512x512-maskable.png",
+            "sizes":"512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "start_url": "/TELPort-app/index.html",
+    "display": "standalone",
+    "background_color": "#384944",
+    "theme_color": "#384944"
+}
