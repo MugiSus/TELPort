@@ -481,7 +481,7 @@ textarea:focus {
     width: 3.52vh;
     height: 2.2vh;
     display: block;
-    background: url("listen-slider-thumb.svg");
+    background: url("imgs/listen-slider-thumb.svg");
     background-size: contain;
     border-radius: 0.2vh;
     box-shadow: none;
@@ -496,7 +496,7 @@ textarea:focus {
     width: 3.52vh;
     height: 2.2vh;
     display: block;
-    background: url("listen-slider-thumb.svg");
+    background: url("imgs/listen-slider-thumb.svg");
     background-size: contain;
     border-radius: 0.2vh;
     box-shadow: none;
