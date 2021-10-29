@@ -21,12 +21,6 @@
             "purpose": "maskable"
         },
         {
-            "src": "icons/TELPort-icon-192.png",
-            "sizes":"192x192",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
             "src": "icons/TELPort-icon-384.png",
             "sizes":"384x384",
             "type": "image/png",
@@ -37,6 +31,12 @@
             "sizes":"512x612",
             "type": "image/png",
             "purpose": "maskable"
+        },
+        {
+            "src": "icons/TELPort-icon-512-roundedsqare.png",
+            "sizes":"512x512",
+            "type": "image/png",
+            "purpose": "any"
         }
     ],
     "start_url": "/app/index.html",
