@@ -518,7 +518,7 @@ textarea:focus {
     flex-wrap: wrap;
     justify-content: center;
     overflow-y: scroll;
-    width: 90vw;
+    width: 100vw;
     height: 85vh;
 }
 
