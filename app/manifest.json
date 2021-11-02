@@ -3,6 +3,12 @@
     "short_name":"TELPort",
     "icons": [
         {
+            "src": "icons/TELPort-icon-any-512.png",
+            "sizes":"512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
             "src": "icons/TELPort-icon-72.png",
             "sizes":"72x72",
             "type": "image/png",
@@ -31,12 +37,6 @@
             "sizes":"512x612",
             "type": "image/png",
             "purpose": "maskable"
-        },
-        {
-            "src": "icons/TELPort-icon-any-512.png",
-            "sizes":"512x512",
-            "type": "image/png",
-            "purpose": "any"
         }
     ],
     "start_url": "/app/index.html",
