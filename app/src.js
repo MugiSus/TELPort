@@ -1,6 +1,6 @@
 const FFTsize = 4096;
 const FirstFreuency = (44100 / FFTsize) * 55;
-const BytesPerRound = 25;
+const BytesPerRound = 28;
 const Frequencies = new Array(8 * BytesPerRound).fill(0).map((_, i) => {
     return FirstFreuency + (44100 / FFTsize * 5) * i;
 });
@@ -21,7 +21,7 @@ const AudioContext = window.AudioContext || window.webkitAudioContext; // both (
 let context; // both
 
 const StartingSoundSpeed = 500; // both // milliseconds
-let speed = 180; // both // milliseconds 
+let speed = 170; // both // milliseconds 
 
 let requestAnimationFrameID, lastCallbackTime; // listen
 let intervalID; // call
@@ -54,7 +54,12 @@ function initialize() {
 }
 
 function calculateFletcher64(uint8Array) {
-    let fletcherResult = uint8Array.reduce((previous, current) => [(previous[0] + current) % 0xFFFFFFFF, (previous[1] + (previous[0] + current)) % 0xFFFFFFFF], [0, 0]);
+    let fletcherResult = uint8Array.reduce((previous, current) => [
+            (previous[0] + current) % 0xFFFFFFFF,
+            (previous[1] + (previous[0] + current)) % 0xFFFFFFFF
+        ],
+        [0, 0]
+    );
     return Uint8Array.from([
         fletcherResult[0] & 0xFF,
         fletcherResult[0] >>> 8 & 0xFF,
