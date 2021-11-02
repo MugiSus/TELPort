@@ -340,7 +340,7 @@ function listen_listenFileLoop() {
             }
 
             if (file.name == "TELPortRecallTester.telprt") { // if this is the tester file
-                targetDownloaderElement.getElementsByClassName("listen-file-text")[0].innerText = `${recallTester_calculateRecall(file.content) * 100}% [TELPORT RECALL TESTER]`;
+                targetDownloaderElement.getElementsByClassName("listen-file-text")[0].innerText = `${recallTester_calculateRecall(file.content) * 100}% [TELPORT RECALL TESTER ${new Date().getMilliseconds()}]`;
             }
 
             nextConfirmTime = Infinity;
