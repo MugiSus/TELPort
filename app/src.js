@@ -218,6 +218,7 @@ async function listen_setup() {
     analyser.fftSize = FFTsize;
     analyser.maxDecibels = 40;
     analyser.minDecibels = -140;
+    analyser.smoothingTimeConstant = 0.0;
     
     heardUint8Array = new Uint8Array(BytesPerRound);
     eachBitAmplitudes = new Uint8Array(BytesPerRound * 8);
