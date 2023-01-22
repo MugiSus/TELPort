@@ -21,7 +21,7 @@ const AudioContext = window.AudioContext || window.webkitAudioContext; // both (
 let context; // both
 
 const StartingSoundSpeed = 500; // both // milliseconds
-let speed = 200; // both // milliseconds 
+let speed = 50; // both // milliseconds 
 
 let requestAnimationFrameID, lastCallbackTime; // listen
 let intervalID; // call
@@ -218,6 +218,7 @@ async function listen_setup() {
     analyser.fftSize = FFTsize;
     analyser.maxDecibels = 40;
     analyser.minDecibels = -140;
+    analyser.smoothingTimeConstant = 0.0;
     
     heardUint8Array = new Uint8Array(BytesPerRound);
     eachBitAmplitudes = new Uint8Array(BytesPerRound * 8);
@@ -340,7 +341,7 @@ function listen_listenFileLoop() {
             }
 
             if (file.name == "TELPortRecallTester.telprt") { // if this is the tester file
-                targetDownloaderElement.getElementsByClassName("listen-file-text")[0].innerText = `${recallTester_calculateRecall(file.content) * 100}% [TELPORT RECALL TESTER ${new Date().getMilliseconds()}]`;
+                targetDownloaderElement.getElementsByClassName("listen-file-text")[0].innerText = `${recallTester_calculateRecall(file.content) * 100}% [TELPORT RECALL TESTER ${Date.now()}]`;
             }
 
             nextConfirmTime = Infinity;
@@ -377,7 +378,7 @@ function listen_tuning() {
     threshold = threshold.map((_, index) => {
         let thresholdLow = (eachBitAmplitudes[index * 4] + eachBitAmplitudes[index * 4 + 1]) / 2;
         let thresholdHigh = (eachBitAmplitudes[index * 4 + 2] + eachBitAmplitudes[index * 4 + 3]) / 2;
-        return thresholdLow + (thresholdHigh - thresholdLow) * 0.82;
+        return thresholdLow + (thresholdHigh - thresholdLow) * 0.9;
     })
 
     thresholdAve = threshold.reduce((previous, current) => previous + current) / threshold.length;
